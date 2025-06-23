@@ -1,0 +1,80 @@
+/* Background Gradient + Animation */
+body {
+  background: linear-gradient(270deg, #fec8d8, #fff9c4, #bbdefb);
+  background-size: 300% 300%;
+  animation: bg-pulse 20s ease-in-out infinite;
+  min-height: 100vh;
+  font-weight: 700; /* mimic your font-bold */
+  display: flex;
+  flex-direction: column;
+}
+
+/* Background pulse animation */
+@keyframes bg-pulse {
+  0% {
+    background-position: 0% 50%;
+  }
+  50% {
+    background-position: 100% 50%;
+  }
+  100% {
+    background-position: 0% 50%;
+  }
+}
+
+/* Fade In Animation */
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(20px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+.animate-fadeIn {
+  animation: fadeIn 0.7s ease-in-out;
+}
+
+/* Bounce Animation */
+@keyframes bounceIn {
+  0% {
+    transform: scale(0.95);
+  }
+  60% {
+    transform: scale(1.05);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+.animate-bounce {
+  animation: bounceIn 0.5s ease;
+}
+
+/* Selected GIF styling */
+#gif-gallery img.selected {
+  border: 3px solid #ec4899;
+  border-radius: 12px;
+  box-shadow: 0 0 10px #f9a8d4;
+}
+
+/* Watermark style */
+.watermark {
+  font-size: 0.7rem;
+  color: #aaa;
+  position: absolute;
+  bottom: 0.5rem;
+  right: 0.75rem;
+  opacity: 0.75;
+}
+
+/* Scrollbar for GIF picker */
+#gif-gallery::-webkit-scrollbar {
+  height: 6px;
+}
+#gif-gallery::-webkit-scrollbar-thumb {
+  background-color: #f472b6;
+  border-radius: 3px;
+}
